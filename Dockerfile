@@ -19,6 +19,7 @@ RUN pnpm install --frozen-lockfile
 
 # ── Stage 3: Build ───────────────────────────────────────────────────────────
 FROM base AS builder
+WORKDIR /app
 COPY --from=deps /app/ /app/
 COPY . .
 
